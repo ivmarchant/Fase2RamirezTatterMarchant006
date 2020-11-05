@@ -3,40 +3,60 @@ from django.urls import reverse
 import uuid
 
 # Create your models here.
-class Gen(models.Model):
-    nomb = models.CharField(max_length=200)
+class Genre(models.Model):
+    name = models.CharField(max_length=200)
 
     def __str__(self):
-        return self.nomb
-
-class Edito(models.Model):
-    nomb = models.CharField(max_length=200)
-
-    def __str__(self):
-        return self.nomb
-
+        return self.name
 class Manga(models.Model):
+    
+	titulo = models.CharField(max_length=200)
+	Mangaka = models.ForeignKey('Mangaka', on_delete=models.SET_NULL, null=True)
+    
+	summary = models.TextField(max_length=1000)
+	volumen = models.CharField('Volumen', max_length=13)
+	genre = models.ManyToManyField(Genre)
+    
+	def __str__(self):
+		return self.titulo
+    
+	def get_absolute_url(self):
+		"""Returns the url to access a detail record for this manga."""
+		return reverse('manga-detail', args=[str(self.id)])
 
-    titulo = models.CharField(max_length=300)
-    autor = models.ForeignKey('Autor', on_delete=models.SET_NULL, null=True)
-    resumen = models.TextField(max_length=2000)
-    genero = models.ManyToManyField(Gen)
-    editorial = models.ManyToManyField(Edito)
+class MangaInstance(models.Model):
+    id=models.UUIDField(primary_key=True, default=uuid.uuid4)
+    manga= models.ForeignKey('Manga', on_delete=models.SET_NULL, null=True)
+    fecha= models.DateField(null=True, blank=True)
 
-    def __str__(self):
-        return self.titulo
-
-class Autor(models.Model):
-    nombre = models.CharField(max_length=100)
-    apelli = models.CharField(max_length=100)
-    naci = models.DateField(null=True, blank=True)
-    falle = models.DateField('muerte', null=True, blank=True)
-
+    STOCK_STATUS= (
+        ('s', 'Stock Disponible'),
+        ('n', 'Stock no Disponible'),
+    )
+    status = models.CharField(
+        max_length=2,
+        choices=STOCK_STATUS,
+        blank=True,
+        default='s',
+    )
     class Meta:
-        ordering = ['apelli', 'nombre']
-
-    def get_absolute_url(self):
-        return reverse('detalles-autor', args=[self.id])
-
+        ordering = ['fecha']
     def __str__(self):
-        return f'{self.apelli}, {self.nombre}'
+        """String for representing the Model object."""
+        return f'{self.id} ({self.manga.titulo})'
+class Mangaka(models.Model):
+	"""Model representing an Mangaka."""
+	primer_nombre = models.CharField(max_length=100)
+	apellido = models.CharField(max_length=100)
+	fecha_nacimiento = models.DateField(null=True, blank=True)
+	fecha_muerte = models.DateField('Died', null=True, blank=True)
+
+	class Meta:
+		ordering = ['apellido', 'primer_nombre']
+
+	def get_absolute_url(self):
+		return reverse('mangaka-detail', args=[str(self.id)])
+
+	def __str__(self):
+		"""String for representing the Model object."""
+		return f'{self.apellido}, {self.primer_nombre}'	
