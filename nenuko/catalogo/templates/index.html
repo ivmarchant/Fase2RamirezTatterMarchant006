@@ -1,0 +1,16 @@
+{%extends "base_generic.html" %}
+
+{% block content %}
+<h1>Tiendita otaku xd</h1>
+
+    <p>Bienvenidos a nenuko sotke <em> Tienda otaku</em>, Djando website</p>
+    
+<h2> Dynamic content</h2>
+
+    <p> Nuestro stock de momento es: </p>
+    <ul>
+        <li><strong>Mangas: </strong> {{num_mangas}}</li>
+        <li><strong>Stock disponible:</strong> {{num_mangas_stock}}</li>
+    </ul>
+
+{% endblock %}
