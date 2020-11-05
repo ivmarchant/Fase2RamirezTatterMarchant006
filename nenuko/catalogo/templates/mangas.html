@@ -1,0 +1,119 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Tiendita Otaku</title>
+        <meta name="viewport" content="width=device-width">
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+              <div class="col-3"  style="background-color:#fcd2e6">
+                <h1>
+                {% load static %}
+                  <img class="img1" src="{% static 'images/images.png' %}" style="max-width:40%;height:auto;"></h1> 
+              </div>
+              <div class="col-6"  style="background-color:#fcd2e6">
+                <h1 style="font-size:2.8vw"><strong> Literatura </strong></h1>
+              </div>
+              <div class="col-3"  style="background-color:#fcd2e6">
+                <h1><img class="img2" src="{% static 'images/images2.png' %}"  style="max-width:40%;height:auto;"></h1>
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class="container-fluid">
+            <h1>Mangas Disponibles</h1>
+            <div class="row">
+              <div class="col-lg-2">
+                <div class="card">
+                  <img class="card-img-top" src="{% static 'images/SpyxFamily.png' %}">
+                  <div class="card-body">
+                    <div class="centro">
+                      <h4 class="card-title">Spy x Family</h4>
+                      <p2 class="card-text"> $3.000 </p2>
+                      <br>
+                      <a href="#" class="btn btn-primary">Agregar al Carrito</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <br>
+            <div class="col-lg-2">      
+              <div class="card">
+                <img class="card-img-top" src="{% static 'images/ShingekiNoKyojin.jpg' %}" style="max-width:110%;height:auto;" >            
+                <div class="card-body">
+                  <div class="centro">
+                    <h4 class="card-title">Shingeki no Kyojin</h4>
+                    <p2 class="card-text"> $3.000 </p2>
+                    <br>
+                    <a href="#" class="btn btn-primary">Agregar al Carrito</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="col-lg-2">      
+              <div class="card">
+                <img class="card-img-top" src="{% static 'images/Bungou.png' %}" >        
+                <div class="card-body">
+                  <div class="centro">
+                    <h4 class="card-title">Bungou Stray Dogs</h4>
+                    <p2 class="card-text"> $3.000 </p2>
+                    <br>
+                    <a href="#" class="btn btn-primary">Agregar al Carrito</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="col-lg-2">      
+              <div class="card">
+                <img class="card-img-top" src="{% static 'images/Kimetsu.png' %}">            
+                <div class="card-body">
+                  <div class="centro">
+                    <h4 class="card-title">Kimetsu no Yaiba</h4>
+                    <p2 class="card-text"> $3.000 </p2>
+                    <br>
+                    <a href="#" class="btn btn-primary">Agregar al Carrito</a>
+                  </div>
+                </div>
+            </div>
+          </div>
+          <br>
+          <div class="col-lg-2">      
+            <div class="card">
+              <img class="card-img-top" src="{% static 'images/DetectiveConan.png' %}">            
+              <div class="card-body">
+                <div class="centro">
+                  <h4 class="card-title">Detective Conan</h4>
+                  <p2 class="card-text"> $3.000 </p2>
+                  <br>
+                  <a href="#" class="btn btn-primary">Agregar al Carrito</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class="col-lg-2">      
+            <div class="card">
+              <img class="card-img-top" src="{% static 'images/OnePiece.png' %}">            
+              <div class="card-body">
+                <div class="centro">
+                  <h4 class="card-title">One Piece</h4>
+                  <p2 class="card-text"> $3.000 </p2>
+                  <br>
+                  <a href="#" class="btn btn-primary">Agregar al Carrito</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <br>
+    </body>
+</html>
+{% endblock %}

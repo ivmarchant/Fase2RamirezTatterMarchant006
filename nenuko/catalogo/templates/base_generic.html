@@ -1,38 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  
-  {% block title %}<title>Local Library</title>{% endblock %}
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  
-  <!-- Add additional CSS in static file -->
-  {% load static %}
-  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-</head>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <title>Tiendita Otaku</title>
+    <meta name="viewport" content="width=device-width">
 
-<body>
+    {% load static %}
+    <link rel="styleSheet" type="text/css" href="{% static 'css/estilos.css' %}">
+    <link href="{% static 'css/bootstrap.min.css' %}" type="text/css" rel="stylesheet">
+    <link rel="icon" href="{% static 'images/logo1.png' %}">
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-  <div class="container-fluid">
+    </head>
+    <body class="fondo">
+        <!-- navbar-->
+        {% block navbar %}
+        <nav class="navbar navbar-expand-sm navbar-light" style="background-color: #ffb7c5 ;">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#opciones">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Logo -->
+            <a class="navbar-brand" href="{% url 'index' %}">
+              <img src="{% static 'images/logo1.png' %}" style="max-width:70%;height:auto;" alt="Inicio">
+            </a> 
+            
+            <!-- enlaces -->
+            <div class="collapse navbar-collapse" id="opciones"> 
+              
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'mangas' %}">Manga</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'figuras' %}">Figuras</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'index' %}">Registro</a>
+                </li>
+              </ul>
+            </div>
+        </nav>
 
-    <div class="row">
-      <div class="col-sm-2">
-      {% block sidebar %}
-      <ul class="sidebar-nav">
-          <li><a href="{% url 'index' %}">Home</a></li>
-          <li><a href="">Todos los mangas</a></li>
-          <li><a href="">Todos los autores</a></li>
-      </ul>
-     {% endblock %}
-      </div>
-      <div class="col-sm-10 ">
-      {% block content %}{% endblock %}
-      </div>
-    </div>
+        {% endblock %}
 
-  </div>
-</body>
+          <!--<audio src="{% static 'audio/ronin-asian-lofi-hiphop-mix_JApkw10N.mp3' %}" controls autoplay="true" loop></audio>-->
+
+          <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+    {% block content %}{% endblock %}
+    <footer class="container">
+      <p class="float-right"><a href="#">Ir al inicio</a></p>
+      <p>&copy; 2019-2020 Nenuko´s Store® UwU. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+    </footer>
+    </body>
 </html>

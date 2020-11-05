@@ -1,0 +1,97 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Tiendita Otaku</title>
+        <meta name="viewport" content="width=device-width">
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+              <div class="col-3"  style="background-color:#fcd2e6">
+                <h1>
+                {% load static %}
+                  <img class="img1" src="{% static 'images/images.png' %}" style="max-width:40%;height:auto;"></h1> 
+              </div>
+              <div class="col-6"  style="background-color:#fcd2e6">
+                <h1 style="font-size:2.8vw"><strong> Figuritas </strong></h1>
+              </div>
+              <div class="col-3"  style="background-color:#fcd2e6">
+                <h1><img class="img2" src="{% static 'images/images2.png' %}"  style="max-width:40%;height:auto;"></h1>
+              </div>
+            </div>
+          </div>
+        <div class="container-fluid">   
+            <h1>Oferta de la semana</h1>
+            <div class="row justify-content-center"> 
+              <div class="col-sg-3">        
+                  <div class="card" >
+                    {% load static %}
+                    <img class="card-img-top" src="{% static 'images/ichigo1.png' %}">            
+                    <div class="card-body">
+                      <h4  class="card-title">Figura Ichigo</h4>
+                      <p2  class="card-text">Figura Kurosaki Ichigo - Bleach 30CM.<br><strike>$55.000</strike><i>  $30.000 </i></p2>
+                      <br>
+                      <a href="#" class="btn btn-primary">Agregar al Carrito</a>
+                    </div>
+                  </div>          
+              </div>
+            </div>
+          </div> 
+        
+          <br>
+          <div class="container-fluid"> 
+            <h1>Productos</h1>  
+            <div class="row"> 
+              <div class="col-md">        
+                <div class="card">
+                  <img class="card-img-top" src="{% static 'images/zoro1.png' %}">            
+                  <div class="card-body">
+                    <h4 class="card-title">Figura Zoro </h4>
+                    <p2 class="card-text"> Figura Roronoa Zoro - One Piece 30CM.<br><i>$50.000</i></p2>
+                    <br>
+                    <a href="#" class="btn btn-primary">Agregar al Carrito</a>
+                  </div>
+                </div>          
+            </div>
+            <div class="col-md">        
+              <div class="card">
+                <img class="card-img-top" src="{% static 'images/kakashi1.png' %}">            
+                <div class="card-body">
+                  <h4 class="card-title">Figura Kakashi</h4>
+                  <p2 class="card-text">Figura Kakashi Hatake -Naruto 30CM. <br> <i> $60.000</i></p2>
+                  <br>
+                  <a href="#" class="btn btn-primary">Agregar al Carrito</a>
+                </div>
+              </div>          
+          </div>
+          <div class="col-md">        
+            <div class="card">
+              <img class="card-img-top" src="{% static 'images/kaneki1.png' %}">            
+              <div class="card-body">
+                <h4 class="card-title">Figura Kaneki</h4>
+                <p2 class="card-text">Figura Kaneki Ken - Tokyo Ghoul 30CM. <br> <i> $65.000</i> </p2>
+                <br>
+                <a href="#" class="btn btn-primary">Agregar al Carrito</a>
+              </div>
+            </div>          
+        </div>
+        <div class="col-md">        
+          <div class="card">
+            <img class="card-img-top" src="{% static 'images/saber1.png' %}">            
+            <div class="card-body">
+              <h4 class="card-title">Figuera Saber</h4>
+              <p2 class="card-text">Figura Arturia Pendragon - Fate/stay 30CM. <br><i> $55.000</i></p2>
+              <br>
+              <a href="#" class="btn btn-primary">Agregar al Carrito</a>
+                 </div>
+              </div>          
+            </div>
+          </div>
+        </div>
+    </body>
+</html>
+{% endblock %}

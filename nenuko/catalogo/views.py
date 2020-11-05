@@ -11,6 +11,18 @@ def index(request):
         'index.html',
         context={'num_mangas': num_Mangas, 'num_mangas_stock': num_Mangas_stock},
     )
+def mangas(request):
+
+    return render(
+        request,
+        'mangas.html',
+       
+    )
+def figuras(request):
+    return render(
+        request,
+        'figuras.html',
+    )
 
 class MangaListView(generic.ListView):
     model = Manga

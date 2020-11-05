@@ -1,16 +1,85 @@
-{%extends "base_generic.html" %}
+{% extends "base_generic.html" %}
 
 {% block content %}
-<h1>Tiendita otaku xd</h1>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Tiendita Otaku</title>
+    <meta name="viewport" content="width=device-width">
+  
+    {% load static %}
+    <link rel="styleSheet" href="{% static 'css/estilos.css' %}">
+    <!--Carrousel-->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  
+  </head>
+  <body>
+    <!--Logo Tienda-->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-3"  style="background-color:#fcd2e6">
+          <h1>
+            <img class="img1" src="{% static 'images/images.png' %}" style="max-width:40%;height:auto;"></h1> 
+        </div>
+        <div class="col-6"  style="background-color:#fcd2e6">
+          <h1 style="font-size:2.8vw"><strong>Bienvenido a Nenuko´s Store </strong></h1>
+        </div>
+        <div class="col-3"  style="background-color:#fcd2e6">
+          <h1><img class="img2" src="{% static 'images/images2.png' %}"  style="max-width:40%;height:auto;"></h1>
+        </div>
+      </div>
+    </div>
+    <br>
 
-    <p>Bienvenidos a nenuko sotke <em> Tienda otaku</em>, Djando website</p>
-    
-<h2> Dynamic content</h2>
 
-    <p> Nuestro stock de momento es: </p>
-    <ul>
-        <li><strong>Mangas: </strong> {{num_mangas}}</li>
-        <li><strong>Stock disponible:</strong> {{num_mangas_stock}}</li>
-    </ul>
+
+      <div class="container">
+      
+          <div id="carousel1" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carousel1" data-slide-to="0" class="active"></li>
+              <li data-target="#carousel1" data-slide-to="1"></li>
+              <li data-target="#carousel1" data-slide-to="2"></li>
+            </ol>
+            <!-- diapositivas -->
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img class="d-block w-100" src="{% static 'images/Inicio.png' %}" alt="">
+                  <div class="carousel-caption">
+                    <h3> <strong> Somos Nenuko´s Store </strong></h3>
+                    <p> <strong> Una tienda 100% online con envios a todo Chile</strong></p>
+                  </div>
+              </div>
+              <div class="carousel-item">
+                <a href=Manga  target="_self" > <!-- Agregar "manga.html" -->
+                  <img class="d-block w-100" src="{% static 'images/manga.png' %}" alt=""></a>
+                  <div class="carousel-caption">
+                    <h3><strong> Mangas y Novelas </strong></h3>
+                    <p> <strong>Los traemos a pedido.</strong></p>
+                  </div>
+              </div>
+              <div class="carousel-item">}
+                <a href="Figuras" target="_self"> <!-- Agregar "Figuras.html" -->
+                  <img class="d-block w-100" src="{% static 'images/figuras.png' %}" alt=""></a>
+                  <div class="carousel-caption">
+                    <h3><strong>Figuras </strong></h3>
+                    <p><strong>Pura calidad traidas directamente de Japón.</strong></p>
+                  </div>
+              </div>
+            </div>
+            <!-- botones de desplazamiento a izquierda y derecha -->      
+            <a class="carousel-control-prev" href="#carousel1" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carousel1" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+  </body>
+</html>
 
 {% endblock %}

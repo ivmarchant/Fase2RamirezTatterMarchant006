@@ -1,0 +1,55 @@
+
+#prin {
+    text-align: center;
+    background: #ffb7c5;
+    float: center;
+}
+   
+h1{ 
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  
+}
+.img1{
+    float: left;
+}
+.img2{
+    float: right;
+}
+.fig{  
+    padding-left: 597px;
+    padding-right: 597px;
+    font-size: 50px;
+    padding-top: 55px;
+    text-align: center;
+}
+.man{  
+    padding-left: 623px;
+    padding-right: 623px;
+    font-size: 50px;
+    padding-top: 55px;
+   
+}
+.fondo{
+    background-color: #ffb7c5;
+}
+p{
+    font-size: 30px ;
+    -webkit-text-fill-color: rgb(36, 240, 121);
+    -webkit-text-stroke: 1px rgb(0, 0, 0);
+        
+}
+h3{
+    font-size: 50px ;
+    -webkit-text-fill-color: rgb(36, 240, 121);
+    -webkit-text-stroke: 1px rgb(0, 0, 0);
+        
+}
+.card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.centro{
+   text-align: center;
+}
