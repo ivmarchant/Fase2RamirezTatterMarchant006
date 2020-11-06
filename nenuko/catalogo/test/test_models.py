@@ -24,3 +24,5 @@ class BookTestCase(TestCase):
     def test_get_absolute_url(self):
         mangaka=Mangaka.objects.get(id=1)
         self.assertEquals(mangaka.get_absolute_url(),'/catalogo/mangaka/11')    
+
+#PROFE LA QUEREMOS MUCHO ♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡
