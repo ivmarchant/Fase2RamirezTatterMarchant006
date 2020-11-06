@@ -11,7 +11,7 @@ class Genre(models.Model):
 class Manga(models.Model):
     
 	titulo = models.CharField(max_length=200)
-	Mangaka = models.ForeignKey('Mangaka', on_delete=models.SET_NULL, null=True)
+	mangaka = models.ForeignKey('Mangaka', on_delete=models.SET_NULL, null=True)
     
 	summary = models.TextField(max_length=1000)
 	volumen = models.CharField('Volumen', max_length=13)
