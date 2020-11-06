@@ -45,11 +45,21 @@ h3{
     -webkit-text-stroke: 1px rgb(0, 0, 0);
         
 }
-.card{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+h2{
+    text-align: center;
+    padding-bottom: 0%;
 }
+
 .centro{
-   text-align: center;
+    text-align: center;
+}
+
+.fomru{
+    text-align: right;
+}
+.x{
+    font-size: 15px;
+    color: black;
+    text-align: center;
+    background-color: #fcd2e6;
 }

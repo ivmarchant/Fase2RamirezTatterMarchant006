@@ -1,0 +1,21 @@
+{%extends "base_generic.html"%}
+
+{%block content%}
+
+<h1>Mangaka: {{mangaka}}</h1>
+<h2><i>Fecha de Nacimiento: </i>{{ mangaka.fecha_nacimiento}}<i> Fecha de Muerte: </i>{{ mangaka.fecha_muerte}}</h2>
+
+<div style="margin-left:20px;margin-top:20px">
+<h4>Mangas</h4>
+    <dl>
+        {%for manga in mangaka.manga_set.all%}
+            <dt><a href="{%url 'manga-detail' manga.pk %}">{{book}}</a>
+                ({{manga.mangainstance_set.all.count}})</dt>
+                <dd>{{manga.summary}}</dd>
+        {%endfor%}    
+
+    </dl>
+    <a class="btn btn-default" href="{% url 'mangaka_update' pk=mangaka.pk %}">Editar  Mangaka  <span class="glyphicon glyphicon-pencil"></span></a>
+    <a class="btn btn-default" href="{% url 'mangaka_delete' pk=mangaka.pk %}">Eliminar Mangaka   <span class="glyphicon glyphicon-trash"></span></a>
+</div>
+{%endblock%}
